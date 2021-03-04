@@ -77,7 +77,7 @@ ft_tolower.c\
 ft_toupper.c\
 ft_wordcount.c
 OBJECTS =  $(SRCS:.c=.o)
-INCLUDE = libft.h
+INCLUDE = .
 NAME = libft.a
 
 all: $(NAME)

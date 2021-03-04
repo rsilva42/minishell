@@ -30,11 +30,9 @@ char	**env_ltoa(t_env *env)
 	int		i;
 	int		l;
 	char	**a;
-	t_env	*eptr;
 
 	i = 0;
 	l = 0;
-	eptr = env;
 	a = malloc(sizeof(char *) * (env_lstlen(env) + 1));
 	while (env)
 	{
