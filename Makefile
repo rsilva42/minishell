@@ -36,17 +36,17 @@ OBJS =	objects/display.o\
 		objects/minishell.o\
 		objects/search_builtin.o\
 		objects/search_path.o
-INCLS = includes $(LIB_INC)
+INCLS = -I includes $(LIB_INC)
 
 all: $(NAME)
 
 objects/%.o: sources/%.c
 	@/bin/mkdir -p objects
-	@gcc $(CCFLAGS) -I$(INCLS) $< -o $@
+	@gcc $(CCFLAGS) $(INCLS) $< -o $@
 
 $(NAME): $(OBJS)
 	@make -C $(LIB)
-	@gcc $(LIB_LINK) $(OBJS) -o $(NAME)
+	@gcc $(OBJS) $(LIB_LINK) -o $(NAME)
 
 clean:
 	@make -C $(LIB) clean
